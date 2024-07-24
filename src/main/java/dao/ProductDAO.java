@@ -97,10 +97,35 @@ public class ProductDAO {
 	}
 	
 	
+//	findProduct
+	public List<Product> findProductByName(String name) {
+		ArrayList<Product> pList = new ArrayList<Product>();
+		String query = "Select * from Product where name like ?";
+		try {
+			conn = ConnectDB.getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, "%" + name + "%");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Product p = new Product();
+				p.setId(rs.getInt(1));
+				p.setName(rs.getString(2));
+				p.setImage(rs.getString(3));
+				p.setPrice(rs.getDouble(4));
+				p.setTitle(rs.getString(5));
+				pList.add(p);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return pList;
+	}
+	
 	public static void main(String[] args) {
 		ProductDAO pDAO = new ProductDAO();
 //		List<Product> pList = pDAO.getAllProduct();
-		List<Product> pList = pDAO.getProductByCID("1");
+//		List<Product> pList = pDAO.getProductByCID("1");
+				List<Product> pList = pDAO.findProductByName("a");
 		for (Product p : pList) {
 			System.out.println(p);
 			
