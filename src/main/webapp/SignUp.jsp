@@ -16,26 +16,23 @@
         <title>Login Form</title>
     </head>
     <body>
-        <div id="logreg-forms">
-            <form class="form-signin" action="login" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+        <div id = "logreg-forms">
+           
+            <form action="signup" method="post" class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign up</h1>
                 <p class="text-danger">${mess}</p>
-                <input name="user"  type="text" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
-                <input name="pass"  type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <input name="user"  type="text" id="inputEmail" class="form-control" placeholder="User name" required="" autofocus="">
+                <input name="pass"  type="password" id="user-pas" class="form-control" placeholder="Password" required="">
+                <input name="repass"  type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required="">
 
-                <div class="form-group form-check">
-                    <input name="remember" value="1" type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                </div>
-
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
-                <hr>
-                <a href="SignUp.jsp"><i class="fas fa-angle-right"></i> Sign up New Account</a>
+                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+               
+                <span>Already have an account? </span>
                 
+                <a href="Login.jsp"><i class="fas fa-angle-right"></i> Sign in</a>
                 
             </form>
-
-            
+            <br>
 
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
