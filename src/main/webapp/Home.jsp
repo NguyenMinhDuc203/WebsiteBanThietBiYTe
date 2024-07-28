@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home</title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -44,8 +44,14 @@
                                                 <p class="btn btn-danger btn-block">${o.price}</p>
                                             </div>
                                             <div class="col">
-                                                <a href="#" class="btn btn-success btn-block">Add to cart</a>
-                                            </div>
+<form action="addcart" method="post">
+    <input type="hidden" name="id" value="${o.id}">
+    <input type="hidden" name="name" value="${o.name}">
+    <input type="hidden" name="price" value="${o.price}">
+    <input type="hidden" name="image" value="${o.image}">
+    <input type="hidden" name="title" value="${o.title}">
+    <button type="submit" class="btn btn-success btn-block">Add to cart</button>
+</form>                                            </div>
                                         </div>
                                     </div>
                                 </div>

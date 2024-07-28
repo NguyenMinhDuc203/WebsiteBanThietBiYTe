@@ -17,7 +17,7 @@
                 </c:if>
                 <c:if test="${sessionScope.acc.isSell == 1}">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Manager Product</a>
+                    <a class="nav-link" href="managerproduct">Manager Product</a>
                 </li>
                 </c:if>
               	<c:if test="${sessionScope.acc != null}">
@@ -37,7 +37,7 @@
                         </button>
                     </div>
                 </div>
-                <a class="btn btn-success btn-sm ml-3" href="show">
+                <a class="btn btn-success btn-sm ml-3" href="cart">
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">3</span>
                 </a>
